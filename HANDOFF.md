@@ -2,7 +2,7 @@
 
 ## Current state
 
-Preview 0.3.2, locally accepted by the owner on 2026-09-12. Initial public source destination: Noredge/vindictus-dye-finder, branch main, MIT. The initial public source push completed on 2026-09-12 (initial commit 7bbe571). Remote: https://github.com/Noredge/vindictus-dye-finder.git. Documentation updates may follow that initial commit; verify the actual remote HEAD when resuming. No tag, CI workflow or downloadable GitHub Release is part of this snapshot.
+Preview 0.3.2, locally accepted by the owner on 2026-09-12. Initial public source destination: Noredge/vindictus-dye-finder, branch main, MIT. The initial public source push completed on 2026-09-12 (initial commit 7bbe571). Remote: https://github.com/Noredge/vindictus-dye-finder.git. Documentation updates may follow that initial commit; verify the actual remote HEAD when resuming. The owner has now authorized a downloadable 0.3.2 Release. Windows CI builds, tests and packages the application; verify its run and Release status before assuming publication has completed.
 
 README is intentionally brief. TODO contains the next work. AGENTS contains implementation and data boundaries. Internal historical notes and local packages remain ignored rather than published.
 
@@ -18,12 +18,12 @@ Feedback has three outcomes; exact RGB labels require confirmation at the origin
 
 The last local 0.3.2 run passed 128 checks with the owner's optional private screenshot set plus the WPF smoke test. The packaged ZIP was extracted and its executable passed smoke testing. The public checkout does not include those private screenshots; the default test command uses deterministic checks and the bundled demo. Re-run it on Windows before new changes are published.
 
-Use scripts/Build.ps1 and scripts/Test.ps1 with a .NET 10 SDK. The verified local toolchain was SDK 10.0.400 and runtime 10.0.11. NuGet.Config disables network feeds; portable publishing expects an existing offline runtime cache. The app has no third-party application packages.
+Use scripts/Build.ps1 and scripts/Test.ps1 with a .NET 10 SDK. The verified local toolchain was SDK 10.0.400 and runtime 10.0.11. NuGet.Config disables network feeds; portable publishing supports -Online or an existing offline runtime cache. The app has no third-party application packages.
 
 ## Resume here
 
 1. Check git status, remote and HEAD; read TODO.
-2. Set up CI and verify its exact package before a separately authorized downloadable Release.
+2. Verify the Windows CI run and v0.3.2 Release assets; publication uses the exact downloaded CI ZIP after local smoke verification.
 3. Collect real trial feedback, then make an isolated easier-alignment experiment. Do not change color math and ranking together.
 
 Keep new UI text English. Preserve the visible tolerance slider, compact markers, six RGB summaries, custom names and local-only feedback flow.

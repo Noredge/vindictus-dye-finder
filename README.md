@@ -2,6 +2,10 @@
 
 A small, offline Windows app that suggests useful dye positions from a Vindictus screenshot. **Preview 0.3.2** · Windows x64 · MIT.
 
+## Download
+
+[Download the Windows x64 ZIP](https://github.com/Noredge/vindictus-dye-finder/releases/latest). Extract everything and open **VindictusDyeFinder.exe**. No .NET installation required.
+
 ## Use
 
 1. Open a screenshot, drag it in, or paste with **Ctrl+V**. **Try Demo** opens a real cropped example.
@@ -25,6 +29,6 @@ Install the .NET 10 SDK on Windows, then run:
 ./scripts/Test.ps1
 ```
 
-Run `src/DyeFinder.App/bin/Release/net10.0-windows/VindictusDyeFinder.exe`. The repository contains source, not a packaged download. For an offline portable build, use `scripts/Publish.ps1 -RuntimePackages <NuGet-cache>` with the Windows x64 runtime packages 10.0.11 available in that cache.
+Run `src/DyeFinder.App/bin/Release/net10.0-windows/VindictusDyeFinder.exe`. Portable downloads are available from Releases. For an online portable build, use `scripts/Publish.ps1 -Online`. For an offline portable build, use `scripts/Publish.ps1 -RuntimePackages <NuGet-cache>` with the Windows x64 runtime packages 10.0.11 available in that cache.
 
 See [TODO](TODO.md) for next steps and [HANDOFF](HANDOFF.md) for development status. The bundled game image remains its owner's artwork; see [asset notices](src/DyeFinder.App/Assets/README.md).
