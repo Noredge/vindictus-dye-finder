@@ -2,7 +2,7 @@
 
 ## Current state
 
-Preview 0.3.2, locally accepted by the owner on 2026-09-12. Initial public source destination: Noredge/vindictus-dye-finder, branch main, MIT. This snapshot is prepared for that authorized source push; verify the actual remote HEAD when resuming. No tag, CI workflow or downloadable GitHub Release is part of this snapshot.
+Preview 0.3.2, locally accepted by the owner on 2026-09-12. Initial public source destination: Noredge/vindictus-dye-finder, branch main, MIT. The initial public source push completed on 2026-09-12 (initial commit 7bbe571). Remote: https://github.com/Noredge/vindictus-dye-finder.git. Documentation updates may follow that initial commit; verify the actual remote HEAD when resuming. No tag, CI workflow or downloadable GitHub Release is part of this snapshot.
 
 README is intentionally brief. TODO contains the next work. AGENTS contains implementation and data boundaries. Internal historical notes and local packages remain ignored rather than published.
 

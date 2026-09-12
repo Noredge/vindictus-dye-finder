@@ -17,3 +17,6 @@
 - [ ] Investigate color error only with reliable paired samples and held-out boards; do not enable a global correction from a few examples.
 
 Large-scale custom-dye databases and material-specific models are deferred. Keep changes small enough to compare and roll back.
+
+## Repository milestone
+- [x] Public source repository created and main pushed on 2026-09-12: https://github.com/Noredge/vindictus-dye-finder. No downloadable Release published.
