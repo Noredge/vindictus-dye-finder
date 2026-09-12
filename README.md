@@ -1,74 +1,53 @@
 # Vindictus Dye Finder
 
-An offline Windows app that helps you find useful dye positions from a Vindictus screenshot. Choose the colors you want, then explore a few suggested spots in game.
+Find useful dye positions from a Vindictus screenshot. Choose your colors, explore suggested spots, and preview the result in game.
 
-**Preview 0.3.2 · Windows x64 · MIT**
+**Windows x64 · Offline · Preview 0.3.2**
 
-## Download and start
+**[Download Windows x64 Portable ZIP](https://github.com/Noredge/vindictus-dye-finder/releases/download/v0.3.2/VindictusDyeFinder-0.3.2-win-x64.zip)** — extract the entire ZIP and open **VindictusDyeFinder.exe**. Keep all included files together. No installation or separate .NET runtime is needed.
 
-**[Download the Windows x64 ZIP from Releases](https://github.com/Noredge/vindictus-dye-finder/releases/latest)**
+![Dye Finder showing selected colors, six suggested points, estimated RGB values and a zoom preview](assets/screenshots/find-matches.png)
 
-1. Download `VindictusDyeFinder-0.3.2-win-x64.zip` from the release assets.
-2. Extract the entire ZIP into a folder.
-3. Open **VindictusDyeFinder.exe**. Keep the included files together.
+*The app's built-in real example: choose colors on the left, inspect points in the center, and compare suggestions on the right.*
 
-No installer, Python or separate .NET installation is required. Do not run the executable from inside the ZIP. Release assets include `SHA256SUMS.txt` for download verification.
+## Find a spot
 
-## Find a dye spot
+1. **Open a screenshot.** Use **Open Screenshot**, drag in an image, or paste with **Ctrl+V**. **Try Demo** lets you explore the app immediately.
+2. **Choose your colors.** Select presets or use **Add Color** to enter RGB values and an optional name. Click a color's name to rename it; your choices are saved between sessions.
+3. **Find Matches.** Choose one of up to three **Suggested Spots**, then manually try that area in game.
 
-1. **Open Screenshot** — open or drag in a PNG, JPEG or BMP. You can also paste an image with **Ctrl+V**. Use an original, unscaled screenshot of the random dye board. **Try Demo** opens a real cropped game example.
-2. **Choose Colors** — select one or more presets, or use **Add Color** to enter your own RGB values and an optional name. Click an existing name to rename it. Colors, names and tolerance are saved between sessions.
-3. **Find Matches** — choose one of up to three **Suggested Spots**, then manually try that area in game.
+Each suggestion shows its six estimated RGB values. **Cyan** rings mark suggested points, **yellow** rings mark the original crosses, and **white** marks the selected point. Click any numbered suggested point to inspect it in the single zoom preview below the board.
 
-Each suggestion shows six estimated RGB values in the same two-row order as the game. Cyan rings mark the suggested points; yellow rings mark the original crosses. Click any numbered suggested point to inspect it in the shared zoom preview. The selected point turns white without changing the recommendation.
+## Fine-tune the search
 
-**Color Tolerance** stays visible on the main screen. Increase it to allow more color variation. A pale-yellow message means no matches were found at the current tolerance; try a higher value or another color, then click **Find Matches** again.
+- **Color Tolerance:** increase it to accept more color variation. If no matches are found, a pale-yellow message prompts you to adjust the tolerance or choose another color, then search again.
+- **Check the yellow rings:** they should line up with the original six crosses. If detection is off, use **Advanced** to select the board and mark the points manually.
+- **Prefer easier alignment:** available under **Advanced** to favor nearby matching positions among suggestions with the same matching-slot count.
 
-## If a result looks off
+Use an original, unscaled screenshot for the best starting point. Colors are estimates; small adjustments may help, and clothing materials or lighting can change their appearance. Preview the result in game before committing to a dye.
 
-Check that the yellow rings line up with the original six crosses. Under **Advanced**, you can select the color board and mark the six original points manually if detection is wrong. **Prefer easier alignment** gives nearby matching positions more weight within the same matching-slot count.
+## Record a result
 
-The app recommends useful starting points, not guaranteed exact colors. Small nearby adjustments may help. Screenshot sampling, narrow color bands, clothing materials and lighting can affect the result. Always preview in game before committing to a dye.
+Click **Record Result** after trying a suggestion. Choose **Matched here**, **Found nearby**, or **Not useful**. Notes and a cropped result screenshot are optional.
 
-The custom RGB crafting picker is a different interface and is not supported by the random-board detector. The bundled demo demonstrates the workflow; your current game board needs its own screenshot.
+<img src="assets/screenshots/record-result.png" alt="Record Result dialog with three outcomes, optional notes and screenshot, and Save Feedback" width="550">
 
-## Share feedback
+**Save Feedback** creates a local ZIP. Use **Open Feedback Folder** to find it, review its contents, and attach it to a [GitHub issue](https://github.com/Noredge/vindictus-dye-finder/issues) if you want to share your experience.
 
-After trying a suggestion, select it and click **Record Result**:
-
-- **Matched here** — the recommended position was useful.
-- **Found nearby** — a small adjustment helped.
-- **Not useful** — the recommendation did not help.
-
-Notes and screenshots are optional. If you attach a result image, crop and review it first. **Save Feedback** creates a local ZIP; **Open Feedback Folder** opens its location. Review the ZIP before attaching it to a [GitHub issue](https://github.com/Noredge/vindictus-dye-finder/issues).
-
-An optional exact six-color record requires confirmation that it came from the original recommended position. Nearby results are useful feedback but cannot label that original position with exact RGB.
-
-## Privacy
-
-The app works offline. It does not upload feedback, capture the screen, inspect game processes or control the game. It only analyzes images you open, drop or paste, plus the bundled demo.
-
-Preferences and feedback stay in `%LOCALAPPDATA%/VindictusDyeFinder`. Nothing is shared unless you send it yourself.
+The app works offline and only analyzes images you provide. It does not capture your screen, control the game or upload feedback. Preferences and feedback stay in `%LOCALAPPDATA%/VindictusDyeFinder`.
 
 ## Build from source
 
-Install the .NET 10 SDK on Windows, then run:
+With the .NET 10 SDK on Windows:
 
 ```powershell
 ./scripts/Build.ps1
 ./scripts/Test.ps1
-```
-
-Run `src/DyeFinder.App/bin/Release/net10.0-windows/VindictusDyeFinder.exe`.
-
-For a self-contained Windows x64 build:
-
-```powershell
 ./scripts/Publish.ps1 -Online
 ```
 
-Online publishing downloads runtime packages from NuGet. For offline publishing, supply `-RuntimePackages <NuGet-cache>` with the required runtime packages already available. The CI toolchain uses SDK 10.0.400 and runtime 10.0.11. The app has no third-party application packages.
+The portable build is written to `artifacts/win-x64-0.3.2`. Online publishing downloads the required runtime packages from NuGet.
 
 ## License
 
-Application source and the original paintbrush icon are MIT licensed. Vindictus and the bundled game artwork belong to their respective owners; see [asset notices](src/DyeFinder.App/Assets/README.md). This is an independent utility.
+Application source and the paintbrush icon are [MIT licensed](LICENSE). Vindictus artwork shown in the demo and screenshots belongs to its respective owners; see [asset notices](src/DyeFinder.App/Assets/README.md).
