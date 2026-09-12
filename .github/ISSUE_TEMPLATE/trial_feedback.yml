@@ -1,0 +1,38 @@
+name: Trial feedback
+description: Tell us whether a suggested dye spot was useful.
+title: "[Trial] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        In the app, choose **Record Result**, then **Open Feedback Folder** to find your ZIP.
+        Review its images, notes and settings before attaching it here. GitHub issues are public.
+        Nearby adjustments are useful feedback; they are not exact labels for the original position.
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      placeholder: "0.3.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: What happened?
+      options:
+        - Matched here
+        - Found nearby
+        - Not useful
+        - Could not complete the workflow
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: What worked or was difficult?
+      description: For example, whether the point was easy to align or needed several adjustments.
+  - type: textarea
+    id: package
+    attributes:
+      label: Feedback ZIP (optional)
+      description: Drag your reviewed ZIP here. Remove names, chat and personal notes before sharing.

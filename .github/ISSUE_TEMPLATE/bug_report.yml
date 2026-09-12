@@ -1,0 +1,22 @@
+name: Bug report
+description: Report a problem opening an image, using the UI, or saving feedback.
+title: "[Bug] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: App version and Windows version
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps and observed behavior
+      description: What did you do, what happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot or error text (optional)
+      description: Crop out account names, chats, file paths and personal information before sharing publicly.

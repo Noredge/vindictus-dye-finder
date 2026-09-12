@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+.work/
+artifacts/
+private-data/
+*.user
+*.suo
+.vs/
+
+# Internal historical notes (kept locally)
+docs/
