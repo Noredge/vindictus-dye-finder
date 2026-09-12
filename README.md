@@ -2,9 +2,9 @@
 
 Find useful dye positions from a Vindictus screenshot. Choose your colors, explore suggested spots, and preview the result in game.
 
-**Windows x64 · Offline · Preview 0.3.2**
+**Windows x64 · Offline · Preview 0.3.3**
 
-**[Download Windows x64 Portable ZIP](https://github.com/Noredge/vindictus-dye-finder/releases/download/v0.3.2/VindictusDyeFinder-0.3.2-win-x64.zip)** — extract the entire ZIP and open **VindictusDyeFinder.exe**. Keep all included files together. No installation or separate .NET runtime is needed.
+**[Download Windows x64 Portable ZIP](https://github.com/Noredge/vindictus-dye-finder/releases/download/v0.3.3/VindictusDyeFinder-0.3.3-win-x64.zip)** — extract the entire ZIP and open **VindictusDyeFinder.exe**. One executable, with no DLL folders to manage. No installation or separate .NET runtime is needed.
 
 ![Dye Finder showing selected colors, six suggested points, estimated RGB values and a zoom preview](assets/screenshots/find-matches.png)
 
@@ -46,7 +46,7 @@ With the .NET 10 SDK on Windows:
 ./scripts/Publish.ps1 -Online
 ```
 
-The portable build is written to `artifacts/win-x64-0.3.2`. Online publishing downloads the required runtime packages from NuGet.
+The portable build is written to `artifacts/win-x64-0.3.3`. Online publishing downloads the required runtime packages from NuGet.
 
 ## License
 

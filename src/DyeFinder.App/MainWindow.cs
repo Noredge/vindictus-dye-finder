@@ -45,7 +45,7 @@ public sealed class MainWindow : Window
 
     public MainWindow(bool smoke=false)
     {
-        Title="Vindictus Dye Finder · Preview 0.3.2";Width=1280;Height=850;MinWidth=1100;MinHeight=720;
+        Title="Vindictus Dye Finder · Preview 0.3.3";Width=1280;Height=850;MinWidth=1100;MinHeight=720;
         DarkTheme.Apply(this);
         Background=Brush("#0D1520");Foreground=Brush("#DFE8F1");FontFamily=new FontFamily("Segoe UI");FontSize=13;
         WindowStartupLocation=WindowStartupLocation.CenterScreen;AllowDrop=true;
@@ -276,7 +276,7 @@ public sealed class MainWindow : Window
         try
         {
             var record=new CalibrationRecord(1,DateTimeOffset.UtcNow,new ScreenshotSampler().Version,"",new(geometry.Panel.Width,geometry.Panel.Height),geometry.Markers,geometry.Source,targets.Where(t=>t.check.IsChecked==true).Select(t=>t.color).ToArray(),threshold.Value,preferStable.IsChecked==true,selected,editor.ActualColors,editor.ActualColors is not null,FeedbackPackage.OutcomeLabel(editor.Outcome!.Value),editor.Settings,editor.Notes,sourceName=="Real example"?"bundled-real-demo":"user-image");
-            var id=Guid.NewGuid();var trial=new TrialFeedback(2,id,analysisId,sessionId,"0.3.2","ranker-v1",editor.Outcome.Value,suggestions.ToList().IndexOf(selected)+1,preview.ActivePoint,new(pixels.Width,pixels.Height),"",null,"",record);
+            var id=Guid.NewGuid();var trial=new TrialFeedback(2,id,analysisId,sessionId,"0.3.3","ranker-v1",editor.Outcome.Value,suggestions.ToList().IndexOf(selected)+1,preview.ActivePoint,new(pixels.Width,pixels.Height),"",null,"",record);
             var path=Path.Combine(feedbackDirectory,$"dye-feedback-{DateTime.Now:yyyyMMdd-HHmmss}-{id.ToString("N")[..8]}.zip");
             FeedbackPackage.Save(path,pixels.Crop(geometry.Panel),trial,editor.Evidence);SetStatus("Feedback saved locally. Use Open Feedback Folder to review or share the ZIP.");
         }
