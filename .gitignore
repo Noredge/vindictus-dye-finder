@@ -9,3 +9,8 @@ private-data/
 
 # Internal historical notes (kept locally)
 docs/
+
+# Local development handoff
+AGENTS.md
+TODO.md
+HANDOFF.md

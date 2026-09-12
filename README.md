@@ -31,4 +31,4 @@ Install the .NET 10 SDK on Windows, then run:
 
 Run `src/DyeFinder.App/bin/Release/net10.0-windows/VindictusDyeFinder.exe`. Portable downloads are available from Releases. For an online portable build, use `scripts/Publish.ps1 -Online`. For an offline portable build, use `scripts/Publish.ps1 -RuntimePackages <NuGet-cache>` with the Windows x64 runtime packages 10.0.11 available in that cache.
 
-See [TODO](TODO.md) for next steps and [HANDOFF](HANDOFF.md) for development status. The bundled game image remains its owner's artwork; see [asset notices](src/DyeFinder.App/Assets/README.md).
+The bundled game image remains its owner's artwork; see [asset notices](src/DyeFinder.App/Assets/README.md).
