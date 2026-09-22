@@ -19,7 +19,7 @@ public sealed class FeedbackWindow : Window
     public string Notes=>notes.Text;
     public FeedbackWindow(Suggestion suggestion)
     {
-        Title="Record Result";Width=560;Height=650;MinWidth=500;MinHeight=550;WindowStartupLocation=WindowStartupLocation.CenterOwner;DarkTheme.Apply(this);
+        Title="Record Result";Width=560;Height=Math.Min(650,SystemParameters.WorkArea.Height-24);MinWidth=500;MinHeight=450;WindowStartupLocation=WindowStartupLocation.CenterOwner;DarkTheme.Apply(this);
         var root=new DockPanel{Margin=new(22)};Content=root;
         var footer=new StackPanel();DockPanel.SetDock(footer,Dock.Bottom);root.Children.Add(footer);
         footer.Children.Add(error);

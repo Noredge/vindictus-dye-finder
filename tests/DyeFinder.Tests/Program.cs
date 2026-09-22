@@ -10,6 +10,10 @@ internal static class Program
     [STAThread]
     public static int Main(string[] args)
     {
+        Check(ColorLabels.Display(new(153,153,255))=="RGB 153, 153, 255","unnamed color uses RGB label");
+        Check(ColorLabels.Display(new(153,153,255),"   ")=="RGB 153, 153, 255","empty color name falls back to RGB");
+        Check(ColorLabels.Display(new(230,230,230))=="White" && ColorLabels.Display(new(230,230,230)," Snow ")=="Snow","custom name overrides preset name");
+        ProblemFeedbackChecks.Run(Check);
         var pairs=new (Lab a,Lab b,double expected)[]{
             (new(50,2.6772,-79.7751),new(50,0,-82.7485),2.0425),
             (new(50,3.1571,-77.2803),new(50,0,-82.7485),2.8615),

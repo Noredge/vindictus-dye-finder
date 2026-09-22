@@ -22,13 +22,13 @@ jobs:
       - name: Verify and package
         shell: pwsh
         run: |
-          ./scripts/Test-Portable.ps1 -Directory artifacts/win-x64-0.3.3
+          ./scripts/Test-Portable.ps1 -Directory artifacts/win-x64-0.3.4
           New-Item -ItemType Directory artifacts/release -Force | Out-Null
-          Compress-Archive artifacts/win-x64-0.3.3/* artifacts/release/VindictusDyeFinder-0.3.3-win-x64.zip
-          $hash = (Get-FileHash artifacts/release/VindictusDyeFinder-0.3.3-win-x64.zip -Algorithm SHA256).Hash.ToLowerInvariant()
-          "$hash  VindictusDyeFinder-0.3.3-win-x64.zip" | Set-Content artifacts/release/SHA256SUMS.txt
+          Compress-Archive artifacts/win-x64-0.3.4/* artifacts/release/VindictusDyeFinder-0.3.4-win-x64.zip
+          $hash = (Get-FileHash artifacts/release/VindictusDyeFinder-0.3.4-win-x64.zip -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash  VindictusDyeFinder-0.3.4-win-x64.zip" | Set-Content artifacts/release/SHA256SUMS.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: windows-portable-0.3.3
+          name: windows-portable-0.3.4
           path: artifacts/release/*
           if-no-files-found: error

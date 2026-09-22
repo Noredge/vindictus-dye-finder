@@ -1,4 +1,4 @@
-param([string]$DotNet = 'dotnet', [string]$RuntimePackages, [switch]$Online, [string]$OutputDirectory='artifacts/win-x64-0.3.3')
+param([string]$DotNet = 'dotnet', [string]$RuntimePackages, [switch]$Online, [string]$OutputDirectory='artifacts/win-x64-0.3.4')
 $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path $PSScriptRoot -Parent
 $env:DOTNET_CLI_HOME = Join-Path $repoRoot '.work/cli'

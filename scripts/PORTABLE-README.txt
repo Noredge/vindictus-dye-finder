@@ -1,4 +1,4 @@
-Vindictus Dye Finder - Preview 0.3.3
+Vindictus Dye Finder - Preview 0.3.4
 
 1. Extract the ZIP.
 2. Open VindictusDyeFinder.exe.
@@ -10,7 +10,8 @@ Your existing colors and preferences are kept when upgrading.
 
 Open a screenshot (or Ctrl+V), choose colors, then Find Matches.
 Click a numbered point for a closer view. Preview the result in game.
-Record Result saves feedback; Open Feedback Folder finds your ZIPs.
+Record Result saves a trial; Report a Problem helps when no spot is available.
+Open Feedback Folder finds your saved ZIPs.
 Nothing uploads automatically.
 
 Project: https://github.com/Noredge/vindictus-dye-finder
