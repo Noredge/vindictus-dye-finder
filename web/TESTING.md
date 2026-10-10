@@ -30,11 +30,26 @@ On Windows 10.0.26300, AMD Ryzen 7 5800X3D, Node 24.19.0:
 
 The observed demo search compute time was approximately 0.11–0.12 seconds per run; no P95 or large-image/memory claim is made.
 
+## Observed public Pages behavior
+
+On 2026-10-10, [the public preview](https://noredge.github.io/vindictus-dye-finder/) was deployed from the `web` branch. The initial hosted build was commit `260de01050d68b8d4e1b1f10efca76d77f75740f`, with 18 tests and distribution checks passing in [GitHub Actions](https://github.com/Noredge/vindictus-dye-finder/actions/runs/38094430514). The current `version.json` identifies later documentation revisions as well.
+
+- Anonymous HTTPS requests returned all 10 distribution files. Their sizes and SHA-256 hashes matched the exact CI inventory and the Pages tar artifact, including the Worker and source identity.
+- Codex's Chromium browser detected the demo and an imported copy of its PNG, then returned the same three ordered anchors and six-slot estimates as the desktop fixtures. All six buttons updated one shared preview without moving the recommendations.
+- Chrome also loaded the public URL, detected the demo and returned the same ordered anchors. Selecting point 6 showed RGB (207,199,209), closest target White and ΔE 9.44 in the shared preview, with no captured application errors.
+- Custom RGB/name settings survived a refresh. Exporting settings, importing a strict no-match configuration, then importing the actual exported settings correctly cleared/recomputed results and restored six targets with tolerance 15.
+- A PNG written to the browser session clipboard and pasted with Ctrl+V was recognized and searched successfully. This exercises the browser paste event; it does not establish native clipboard interoperability across operating systems.
+- Manual selection of the 256 × 256 board and six original crosses returned the same ordered anchors. At a 420 × 900 viewport the page scrolled vertically without horizontal document overflow and retained one shared preview.
+- Actual downloaded problem and trial ZIPs passed inventory, schema and SHA-256 checks and the original C# feedback validators. The no-screenshot problem contained only JSON and summary. The Found nearby trial contained the board and an explicitly reviewed 218 × 300 result crop, with no verified game RGB labels. The cropped pixels matched the selected source region.
+- No application warning/error console entries were observed during this hosted Chromium run. Observed search compute times were about 0.11–0.13 seconds for the demo only.
+
+These are deliberate demo trials, not independent in-game accuracy evidence. Hosting and browser checks do not complete the broader acceptance below.
+
 ## Acceptance still required
 
 - Actual Edge, Firefox and Safari runs. Available browser-control connections in this session were Chrome and Codex's browser; installing a test browser is not proof of a browser run.
 - Original screenshots from other panels/sessions, color-profile images, JPEG, transparent PNG and EXIF orientation comparisons against WPF.
-- Real clipboard image paste and drag/drop; these paths are implemented but not fully exercised in the current browser run. Normal text paste must stay inside form fields.
+- Native operating-system clipboard interoperability and drag/drop; the hosted browser-session PNG paste check above covers only one paste path. Normal text paste must stay inside form fields.
 - Manual board/six-point calibration on other screenshots and at different zoom levels; 100/125/150/200% zoom, physical high DPI, full keyboard and accessible-reader acceptance.
 - Browser timings over multiple runs, 4K recognition, 30-target completed searches, continuous image replacement and memory measurements on a declared reference machine.
-- User trial and authorization for a particular hosted deployment. The workflow currently produces a build artifact only; no CI or deployment success is claimed from the local checks.
+- Independent user trials and in-game confirmation of recommendations. The public Pages preview is authorized and deployed; it remains a preview while the browser/image/performance checks above are outstanding.
