@@ -38,9 +38,11 @@ If a screenshot cannot be opened, the board is not detected, or no matches are f
 
 The app works offline and only analyzes images you provide. It does not capture your screen, control the game or upload feedback. Preferences and feedback stay in `%LOCALAPPDATA%/VindictusDyeFinder`.
 
-## Local web preview
+## Public web preview
 
-A separate **Web Preview 0.1** is available in [`web/`](web/README.md). It runs the existing matching rules in a browser Worker, with a shared six-point preview, browser settings and local feedback ZIP downloads. Screenshots are processed in your browser. This is a local preview; there is no published website yet. Browser validation and remaining limits are recorded in [web testing](web/TESTING.md).
+**[Open Web Preview 0.1](https://noredge.github.io/vindictus-dye-finder/)** — open the page, choose **Try Demo** or **Open Screenshot**, then **Find Matches**. No installation is needed. Screenshots are processed in your browser; feedback ZIPs are downloaded only when you choose.
+
+The browser source and Pages workflow live on the [`web` branch](https://github.com/Noredge/vindictus-dye-finder/tree/web). See the [web guide](web/README.md) and [validation/remaining limits](web/TESTING.md). The preview preserves the desktop matching rules, shared six-point zoom and estimated RGB labels; broader browser and real-image acceptance is still in progress.
 
 ## Build from source
 
