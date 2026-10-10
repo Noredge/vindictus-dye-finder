@@ -38,6 +38,10 @@ If a screenshot cannot be opened, the board is not detected, or no matches are f
 
 The app works offline and only analyzes images you provide. It does not capture your screen, control the game or upload feedback. Preferences and feedback stay in `%LOCALAPPDATA%/VindictusDyeFinder`.
 
+## Local web preview
+
+A separate **Web Preview 0.1** is available in [`web/`](web/README.md). It runs the existing matching rules in a browser Worker, with a shared six-point preview, browser settings and local feedback ZIP downloads. Screenshots are processed in your browser. This is a local preview; there is no published website yet. Browser validation and remaining limits are recorded in [web testing](web/TESTING.md).
+
 ## Build from source
 
 With the .NET 10 SDK on Windows:
