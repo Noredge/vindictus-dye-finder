@@ -2,6 +2,14 @@
 
 Find useful dye positions from a Vindictus screenshot. Choose your colors, explore suggested spots, and preview the result in game.
 
+## Public web preview
+
+**[Open Web Preview 0.1](https://noredge.github.io/vindictus-dye-finder/)** — open the page, choose **Try Demo** or **Open Screenshot**, then **Find Matches**. No installation is needed. Screenshots are processed in your browser; feedback ZIPs are downloaded only when you choose.
+
+The browser source lives in `web/` alongside the desktop app on `main`. See the [web guide](web/README.md) and [validation/remaining limits](web/TESTING.md). The preview preserves the desktop matching rules, shared six-point zoom and estimated RGB labels; broader browser and real-image acceptance is still in progress.
+
+## Windows desktop
+
 **Windows x64 · Offline**
 
 **[Download Preview 0.3.4 — Windows x64 Portable ZIP](https://github.com/Noredge/vindictus-dye-finder/releases/download/v0.3.4/VindictusDyeFinder-0.3.4-win-x64.zip)** — extract the entire ZIP and open **VindictusDyeFinder.exe**. One executable, with no DLL folders to manage. No installation or separate .NET runtime is needed.
@@ -37,12 +45,6 @@ Click **Record Result** after trying a suggestion. Choose **Matched here**, **Fo
 If a screenshot cannot be opened, the board is not detected, or no matches are found, use **Report a Problem**. It saves basic app context and optional notes. A screenshot is attached only if you choose, crop and review it.
 
 The app works offline and only analyzes images you provide. It does not capture your screen, control the game or upload feedback. Preferences and feedback stay in `%LOCALAPPDATA%/VindictusDyeFinder`.
-
-## Public web preview
-
-**[Open Web Preview 0.1](https://noredge.github.io/vindictus-dye-finder/)** — open the page, choose **Try Demo** or **Open Screenshot**, then **Find Matches**. No installation is needed. Screenshots are processed in your browser; feedback ZIPs are downloaded only when you choose.
-
-The browser source and Pages workflow live on the [`web` branch](https://github.com/Noredge/vindictus-dye-finder/tree/web). See the [web guide](https://github.com/Noredge/vindictus-dye-finder/blob/web/web/README.md) and [validation/remaining limits](https://github.com/Noredge/vindictus-dye-finder/blob/web/web/TESTING.md). The preview preserves the desktop matching rules, shared six-point zoom and estimated RGB labels; broader browser and real-image acceptance is still in progress.
 
 ## Build from source
 
